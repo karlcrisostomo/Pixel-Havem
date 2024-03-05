@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(90deg, #0001 33%, #0005 50%, #0001 66%) #f2f2f2;
+  background-size: 300% 100%;
+  animation: l1 1s infinite linear;
+  border-radius: 1em;
+}
+@keyframes l1 {
+  0% {
+    background-position: right;
+  }
+}
+.customScroll {
+  scrollbar-width: none;
+  overflow-x: scroll;
+}
