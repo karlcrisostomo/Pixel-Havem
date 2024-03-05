@@ -314,7 +314,6 @@ const MediaWrapper = ({
           </div>
         ))}
       </ul>
-      )
     </section>
   );
 };
