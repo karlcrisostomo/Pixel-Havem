@@ -1,10 +1,10 @@
 import { fetchDataFromPexels } from "@/api/requestManager";
 import { videoResources } from "@/constant";
-import { MediaResponseHandler } from "@/components";
+import { MediaResponseHandler, NoResultComponent } from "@/components";
 
 const Page = ({ data, initialData, videoId }) => {
   const mediaType = "videos";
-  return (
+  return data.length > 0 ? (
     <MediaResponseHandler
       data={data}
       initialData={initialData}
@@ -12,6 +12,8 @@ const Page = ({ data, initialData, videoId }) => {
       itemId={videoId}
       mediaType={mediaType}
     />
+  ) : (
+    <NoResultComponent />
   );
 };
 

@@ -1,12 +1,10 @@
 import { fetchDataFromPexels } from "@/api/requestManager";
 import { photoResources } from "@/constant";
-import { MediaResponseHandler } from "@/components";
+import { MediaResponseHandler, NoResultComponent } from "@/components";
 
 const Page = ({ data, initialData, photoId }) => {
   const mediaType = "photos";
-  return !data ? (
-    <p>search not found</p>
-  ) : (
+  return data.length > 0 ? (
     <MediaResponseHandler
       data={data}
       initialData={initialData}
@@ -14,6 +12,8 @@ const Page = ({ data, initialData, photoId }) => {
       propURL={photoResources}
       mediaType={mediaType}
     />
+  ) : (
+    <NoResultComponent />
   );
 };
 

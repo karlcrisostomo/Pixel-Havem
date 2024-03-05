@@ -6,4 +6,5 @@ export { default as Modal } from "./Modal";
 export { default as StyledLayout } from "./StyledLayout";
 export { default as Loader } from "./Loader";
 export { default as PhotoCategories } from "./PhotoCategories";
+export { default as NoResultComponent } from "./NoResultComponent";
 export { default as Footer } from "./Footer";

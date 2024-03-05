@@ -286,42 +286,35 @@ const MediaWrapper = ({
 }) => {
   return (
     <section>
-      {initialItem.length > 0 ? (
-        <ul className={componentStyles.styledUL}>
-          {initialItem.map((item, idx) => (
-            <div key={idx}>
-              <li className="py-2">
-                {isLoading ? (
-                  <Loader />
-                ) : (
-                  <MediaContainer
-                    item={item}
-                    idx={idx}
-                    mediaType={mediaType}
-                    handleImageClick={handleImageClick}
-                    isHovered={hoveredIndex === idx}
-                    onHover={(isHovered) => handleImageHover(idx, isHovered)}
-                  />
-                )}
+      <ul className={componentStyles.styledUL}>
+        {initialItem.map((item, idx) => (
+          <div key={idx}>
+            <li className="py-2">
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <MediaContainer
+                  item={item}
+                  idx={idx}
+                  mediaType={mediaType}
+                  handleImageClick={handleImageClick}
+                  isHovered={hoveredIndex === idx}
+                  onHover={(isHovered) => handleImageHover(idx, isHovered)}
+                />
+              )}
 
-                {isModalOpen && selectedItemIndex === idx && (
-                  <Modal
-                    item={item}
-                    onClose={() => setModalOpen(false)}
-                    mediaType={mediaType}
-                  />
-                )}
-              </li>
-            </div>
-          ))}
-        </ul>
-      ) : (
-        <div className=" py-24">
-          <p className=" text-center max-md:text-lg md:text-xl tracking-wider ">
-            Does not match any results!
-          </p>
-        </div>
-      )}
+              {isModalOpen && selectedItemIndex === idx && (
+                <Modal
+                  item={item}
+                  onClose={() => setModalOpen(false)}
+                  mediaType={mediaType}
+                />
+              )}
+            </li>
+          </div>
+        ))}
+      </ul>
+      )
     </section>
   );
 };
