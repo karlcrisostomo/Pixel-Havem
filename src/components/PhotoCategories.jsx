@@ -13,7 +13,7 @@ const styles = {
     items-center
   `,
   sliderContainer: `
-   p-6
+    p-6
     flex 
     gap-5 
     customScroll 
@@ -26,9 +26,8 @@ const styles = {
     hover:bg-black
     hover:text-white
     transition-transform
-    hover:outline-double
-    hover:outline-2
-    hover:outline-white/50
+    hover:scale-110
+    duration-300
     px-4 
     text-center 
     text-lg 

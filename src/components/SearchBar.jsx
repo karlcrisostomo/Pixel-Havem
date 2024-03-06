@@ -61,10 +61,11 @@ const styles = {
     flex 
     flex-col
     items-center 
+    justify-center
     gap-2 
     w-[150px]
     bg-white
-    h-[80px]  
+    h-[100px]  
     top-[4rem]   
     shadow-lg
     shadow-black

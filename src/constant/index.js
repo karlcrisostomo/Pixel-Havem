@@ -8,7 +8,7 @@ export const photoResources = (query, item) => {
 export const videoResources = (query, item) => {
   const videoURL = `https://api.pexels.com/videos/search?query=${encodeURIComponent(
     query
-  )}&per_page=${item}`;
+  )}&per_page=${item}&orientation=portrait`;
   return videoURL;
 };
 
@@ -54,5 +54,4 @@ export const categoryList = [
   "Travel",
   "Macro Photography",
   "Industrial",
- 
 ];

@@ -1,7 +1,9 @@
 const ScrollBtnComponent = ({ ModalOpen }) => {
   const [showScrollBtn, setShowScrollBtn] = useState(false);
+
   const styledBtn = {
-    container: `fixed 
+    container: `
+        fixed 
         z-50
       ${ModalOpen ? "hidden " : ""}
         bottom-20 

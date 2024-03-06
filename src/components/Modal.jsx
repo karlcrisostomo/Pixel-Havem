@@ -15,23 +15,26 @@ const StyledModal = {
     bg-black/25  
     backdrop-blur-md 
     top-0 
+    p-2
     left-0 
     right-0  
     w-full 
     bottom-0 
-    p-10  
+  
     flex 
     flex-col 
     justify-center
     z-50`,
   innerSection: `
+    p-6
+    h-fit
     bg-white  
     outline-double
     outline-inner
     outline-2
     outline-offset-2
     outline-white
-    p-10
+   
     mx-auto
     rounded-xl
     sm:w-[400px]
@@ -41,6 +44,7 @@ const StyledModal = {
     2xl:w-[1068px]
     `,
   modalContent: `
+ 
     flex 
     justify-center  
     `,
@@ -66,9 +70,10 @@ const StyledModal = {
   sizeSelectorContainer: `
     absolute 
     right-0
+    max-md:w-full
     cursor-pointer 
     border-2 
-    w-[300px]
+    w-[250px]
     p-4 
     mt-5 
     rounded-lg 
@@ -98,10 +103,10 @@ const Profile = ({ item, mediaType }) => {
       <Image
         priority
         className="rounded-full aspect-square border-[1px] border-black "
-        src={item.src?.original}
+        src={item.src?.original || item.image}
         width={32}
         height={32}
-        alt={item.photographer}
+        alt={item?.photographer || item.user.name}
         quality={75}
       />
     </>
@@ -115,9 +120,9 @@ const MediaContent = ({ mediaType, item, loading }) => {
 
   const videoContent = (
     <video
-      width={500}
+      width={300}
       height={300}
-      className="w-full"
+      className=" "
       autoPlay
       muted
       controls
@@ -186,9 +191,10 @@ const SizeSelectorComponent = ({
     <ul className={StyledModal.sizeSelectorContainer}>
       {sizes.map((size, idx) => (
         <div
-          className={` flex transition-all   ${StyledModal.selectedList} ${
-            selectedSize === idx ? style.highLight : ""
-          }`}
+        key={idx}
+          className={` flex transition-transform   ${
+            StyledModal.selectedList
+          } ${selectedSize === idx ? style.highLight : ""}`}
           onClick={() => handleSelectSize(idx)}
         >
           <li key={idx}>{size}</li>

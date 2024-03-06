@@ -37,7 +37,7 @@ export const SearchProvider = ({ children }) => {
     if (trimmedSearchText !== "") {
       handlePageNavigation(trimmedSearchText);
     } else {
-      console.warn("Please enter a search term.");
+      alert("Please enter a search term.");
     }
   }, [searchText, router, selectedCategory]);
 

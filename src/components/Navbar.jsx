@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const styles = {
   navStyles: `
-  bg-black/50
-  backdrop-blur-md
-  w-full
-  text-white
-  top-0
-  left-0
+    bg-black/50
+    backdrop-blur-md
+    w-full
+    text-white
+    top-0
+    left-0
   `,
   defstyles: `
     fixed  
@@ -36,7 +36,14 @@ const LogoComponent = () => {
   }, []);
   return (
     <button className={styles.logoBtnStyles} onClick={() => handleNavigation()}>
-      <Image src={logo} width={160} height={160} alt="Pixel Haven's Logo" />
+      <Image
+        quality={60}
+        priority
+        src={logo}
+        width={160}
+        height={160}
+        alt="Pixel Haven's Logo"
+      />
     </button>
   );
 };
