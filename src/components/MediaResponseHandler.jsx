@@ -171,24 +171,27 @@ const ScrollBtnComponent = ({ ModalOpen }) => {
     container: `fixed 
       z-50
     ${ModalOpen ? "hidden " : ""}
-      bottom-20 
+      bottom-10 
       left-0 
       right-0 
       bg-gray-900/90 
+      hover:shadow-lg
+      hover:shadow-blue-600
+      hover:scale-105
+      transition-transform
+      duration-200
       w-fit 
       h-fit 
       mx-auto 
       p-4 
       rounded-xl`,
-
     styledArrow: `
       w-[1em] 
       flex 
-      items-center  
+      items-center
       h-[1em] 
       border-r-[0.2em] 
       border-t-[0.2em]  
-      border-solid 
       border-white 
       -rotate-45 `,
   };
