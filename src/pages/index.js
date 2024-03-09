@@ -2,7 +2,7 @@ import { fetchDataFromPexels } from "@/api/requestManager";
 import { curatedPhotos } from "@/constant";
 import { Loader, MediaResponseHandler } from "@/components";
 
-const Home = ({ data, initialData, props }) => {
+const Home = ({ data, initialData }) => {
   const wrapCuratedPhotos = (_, items) => {
     return curatedPhotos(items);
   };
